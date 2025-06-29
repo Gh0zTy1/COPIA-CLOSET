@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Estilo para ocultar texto -->
+    <style name="HiddenTextAppearance">
+        <item name="android:textSize">0sp</item>
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+</resources>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    tools:context=".ui.garmentRegistry.GarmentRegistryFragment">
+
+
+    <!-- Contenedor con Scroll para el formulario -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/header_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#F5F5F5"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:id="@+id/header_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="16dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBackGarmentRegistry"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@color/white"
+                        android:elevation="6dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="60dp"
+                        app:icon="@drawable/ic_arrow_back"
+                        app:iconTint="@color/icon_color"
+                        app:startIconDrawable="@drawable/circle_white_background" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnProfileGarmentRegistry"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@color/white"
+                        android:elevation="6dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="60dp"
+                        app:icon="@drawable/ic_person"
+                        app:iconTint="@color/icon_color"
+                        app:startIconDrawable="@drawable/circle_white_background" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card de la Imagen -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/garmentImageRegistry"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:background="@color/surface_gray"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rounded_button_light" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCameraRegistry"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/button_primary"
+                        android:elevation="6dp"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:cornerRadius="32dp"
+                        app:icon="@drawable/ic_camera"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconTint="@android:color/white" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de la prenda"
+                android:textColor="@color/text_primary_dark"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="25dp"
+                app:cardUseCompatPadding="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNameRegistry"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Nombre de la prenda"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="@color/text_primary_dark"
+                    android:textColorHint="@color/gray_medium"
+                    android:textSize="16sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo Tag -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="Etiqueta"
+                android:textColor="@color/text_primary_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="25dp"
+                app:cardUseCompatPadding="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTagRegistry"
+                    android:layout_width="384dp"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/garment_tag_input_hint"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="@color/text_primary_dark"
+                    android:textColorHint="@color/gray_medium"
+                    android:textSize="16sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo Categoría -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/garment_category_input_lbl"
+                android:textColor="@color/text_primary_dark"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="25dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <Spinner
+                        android:id="@+id/spCategoryRegistry"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_dropdown"
+                        app:tint="@color/gray_medium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo Color -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/garment_color_input_txt"
+                android:textColor="@color/text_primary_dark"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="25dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <Spinner
+                        android:id="@+id/spColorRegistry"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_dropdown"
+                        app:tint="@color/gray_medium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Switch Estampado -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="25dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/garment_has_print_switch"
+                        android:textColor="@color/text_primary_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchPrintRegistry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/SwitchTheme" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón de Registrar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdd"
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="@string/garment_add_garment_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="24dp"
+                android:layout_marginBottom="70dp"
+                app:backgroundTint="@color/button_primary"
+                android:elevation="6dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

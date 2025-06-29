@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="equipo.closet.closetvirtual.ui.clothesCategory.ClothesCategoryFragment"
+        android:label="Mi Armario"
+        tools:layout="@layout/fragment_clothes_category" />
+
+    <fragment
+        android:id="@+id/navigation_new_clothes"
+        android:name="equipo.closet.closetvirtual.ui.garmentRegistry.GarmentRegistryFragment"
+        android:label="Registrar Prenda"
+        tools:layout="@layout/fragment_garment_registry" />
+
+    <fragment
+        android:id="@+id/navigation_outfit_finder"
+        android:name="equipo.closet.closetvirtual.ui.searchoutfit.SearchOutfitFragment"
+        android:label="Buscador de Outfits"
+        tools:layout="@layout/fragment_search_outfit" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="equipo.closet.closetvirtual.ui.profile.ProfileFragment"
+        android:label="Perfil de Usuario"
+        tools:layout="@layout/activity_profile" />
+
+    <fragment
+        android:id="@+id/clothes_selection_fragment"
+        android:name="equipo.closet.closetvirtual.ui.clothesSelection.ClothesSelectionFragment"
+        android:label="Seleccion de Prendas"
+        tools:layout="@layout/fragment_clothes_selection" />
+
+    <action
+        android:id="@+id/action_global_to_profileFragment"
+        app:destination="@id/profileFragment" />
+
+    <fragment
+        android:id="@+id/daily_outfit_fragment"
+        android:name="equipo.closet.closetvirtual.ui.dailyOutfit.DailyOutfitFragment"
+        android:label="Daily Outfit"
+        tools:layout="@layout/fragment_daily_outfit" />
+
+</navigation>

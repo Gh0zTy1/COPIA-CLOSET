@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Estilo para cards con elevación -->
+    <style name="CardWithElevation">
+        <item name="cardElevation">8dp</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <style name="CircularButton" parent="Widget.Material3.Button.IconButton">
+        <item name="android:background">@drawable/circle_white_background</item>
+        <item name="android:backgroundTint">@android:color/white</item>
+        <item name="android:elevation">8dp</item>
+        <item name="cornerRadius">20dp</item>
+    </style>
+
+    <style name="RoundedButton" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/rounded_white_background</item>
+        <item name="android:backgroundTint">@android:color/white</item>
+        <item name="android:elevation">6dp</item>
+        <item name="cornerRadius">25dp</item>
+    </style>
+
+    <style name="SwitchTheme">
+        <item name="colorAccent">@color/button_primary</item>
+        <item name="android:colorForeground">@color/button_primary</item>
+    </style>
+
+    <!-- Indicador personalizado para BottomNav -->
+    <style name="CustomBottomNavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/bottom_nav_active_background</item>
+        <item name="android:width">56dp</item>
+        <item name="android:height">32dp</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+  <style name="InputStyle">
+        <item name="colorAccent">@color/gray_medium</item>
+        <item name="android:colorForeground">@color/gray_medium</item>
+    </style>
+
+    <style name="passwordCursorStyle">
+        <item name="android:textCursorDrawable">@drawable/input_cursor</item>
+    </style>
+
+    <style name="CustomDatePickerTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/gray_medium</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+        <item name="materialCalendarStyle">@style/CustomCalendarStyle</item>
+    </style>
+
+    <style name="CustomCalendarStyle" parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="daySelectedStyle">@style/CustomDaySelectedStyle</item>
+    </style>
+
+    <style name="CustomDaySelectedStyle" parent="Widget.MaterialComponents.MaterialCalendar.Day.Selected">
+        <item name="itemFillColor">@color/gray_medium</item>
+        <item name="itemTextColor">@android:color/white</item>
+    </style>
+
+    <!-- Estilo personalizado para BottomNavigationView -->
+    <style name="CustomBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">0dp</item>
+        <item name="itemIconTint">@drawable/bottom_nav_icon_selector</item>
+        <item name="itemActiveIndicatorStyle">@style/CustomBottomNavIndicator</item>
+        <item name="itemTextColor">@android:color/transparent</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="itemIconSize">24dp</item>
+    </style>
+
+
+</resources>

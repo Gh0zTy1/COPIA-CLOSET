@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout principal que contiene toda la interfaz de la pantalla Mi Armario -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    tools:context=".ui.clothesCategory.ClothesCategoryFragment">
+
+
+    <!-- FrameLayout: Contenedor que permite superponer elementos, aquí contiene el ScrollView con degradado -->
+    <FrameLayout
+        android:id="@+id/category_cards_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ScrollView: Permite hacer scroll vertical del contenido con fondo degradado -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scroll_view_background">
+
+            <!-- LinearLayout: Contenedor vertical que organiza las tarjetas de categorías -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/header_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#F5F5F5"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/header_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="16dp"
+                        android:paddingHorizontal="16dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="25dp"
+                            app:cardElevation="6dp"
+                            app:cardUseCompatPadding="false">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnBackCategoryCards"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:insetLeft="0dp"
+                                android:insetRight="0dp"
+                                android:backgroundTint="@color/white"
+                                app:cornerRadius="25dp"
+                                app:icon="@drawable/ic_arrow_back"
+                                app:iconTint="@color/icon_color"
+                                app:iconSize="24dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                style="@style/Widget.Material3.Button.IconButton" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_margin="4dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="25dp"
+                            app:cardElevation="6dp"
+                            app:cardUseCompatPadding="false">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnProfileCategoryCards"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:insetLeft="0dp"
+                                android:insetRight="0dp"
+                                android:backgroundTint="@color/white"
+                                app:cornerRadius="25dp"
+                                app:icon="@drawable/ic_person"
+                                app:iconTint="@color/icon_color"
+                                app:iconSize="24dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                style="@style/Widget.Material3.Button.IconButton" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/search_filter_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="25dp">
+
+                    <LinearLayout
+                        android:id="@+id/search_filter_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="0dp"
+                                app:cardUseCompatPadding="false">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingStart="16dp">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginEnd="5dp"
+                                        app:cardBackgroundColor="@color/white"
+                                        app:cardCornerRadius="25dp"
+                                        app:cardElevation="0dp"
+                                        app:cardUseCompatPadding="false">
+
+                                        <ImageView
+                                            android:id="@+id/btnSearchClothesCategory"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="?attr/selectableItemBackgroundBorderless"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:scaleType="center"
+                                            android:src="@drawable/ic_search"
+                                            app:tint="@color/icon_color" />
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+
+                                    <EditText
+                                        android:id="@+id/et_search"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/search_hint"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/text_hint"
+                                        android:textSize="18sp"
+                                        android:theme="@style/InputStyle"/>
+
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="0dp"
+                                android:layout_marginEnd="16dp"
+                                app:cardUseCompatPadding="false">
+
+                                <ImageView
+                                    android:id="@+id/btnFilterClothesCategory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_filter"
+                                    app:tint="@color/icon_color" />
+
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- CardView para la categoría "Top" - Parte superior del cuerpo -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp">
+
+                    <!-- LinearLayout interno: Organiza el header y la grilla de la categoría Top -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- ConstraintLayout: Header de la categoría con título y contador -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Texto del título de la categoría "Top" -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Top"
+                                android:textColor="@color/gray_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <!-- Contador circular que muestra la cantidad de prendas tipo "Top" -->
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/top_clothes_counter_label"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:text="8"
+                                android:textStyle="bold"
+                                android:textSize="18dp"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:backgroundTint="@color/gray_dark"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- GridLayout: Grilla que muestra las prendas de la categoría Top en 3 columnas -->
+                        <GridView
+                            android:id="@+id/top_clothes_cards_grid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="auto_fit"
+                            android:columnWidth="96dp"
+                            android:padding="15dp"></GridView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- CardView para la categoría "Bottom" -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Bottom"
+                                android:textColor="@color/gray_dark"
+                                android:textSize="18dp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <!-- Contador circular que muestra la cantidad de prendas tipo "Top" -->
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/bottom_clothes_counter_label"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:text="8"
+                                android:textStyle="bold"
+                                android:textSize="18dp"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:backgroundTint="@color/gray_dark"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- GridLayout: Grilla que muestra las prendas de la categoría Top en 3 columnas -->
+                        <GridView
+                            android:id="@+id/bottom_clothes_cards_grid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="auto_fit"
+                            android:columnWidth="96dp"
+                            android:padding="15dp"></GridView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- CardView para la categoría "Top" - Parte superior del cuerpo -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp">
+
+                    <!-- LinearLayout interno: Organiza el header y la grilla de la categoría Top -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- ConstraintLayout: Header de la categoría con título y contador -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Texto del título de la categoría "Top" -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Bodysuit"
+                                android:textColor="@color/gray_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <!-- Contador circular que muestra la cantidad de prendas tipo "Top" -->
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/bodysuit_clothes_counter_label"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:text="8"
+                                android:textStyle="bold"
+                                android:textSize="18dp"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:backgroundTint="@color/gray_dark"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- GridLayout: Grilla que muestra las prendas de la categoría Top en 3 columnas -->
+                        <GridView
+                            android:id="@+id/bodysuit_clothes_cards_grid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="1"
+                            android:rowCount="4"
+                            android:orientation="horizontal"
+                            android:padding="15dp"></GridView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                
+                <!-- CardView para la categoría "Zapatos" -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp">
+
+                    <!-- LinearLayout interno: Organiza el header y la grilla de la categoría Top -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- ConstraintLayout: Header de la categoría con título y contador -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Texto del título de la categoría "Top" -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Zapatos"
+                                android:textColor="@color/gray_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <!-- Contador circular que muestra la cantidad de prendas tipo "Top" -->
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/shoes_clothes_counter_label"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:text="8"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:backgroundTint="@color/gray_dark"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- GridLayout: Grilla que muestra las prendas de la categoría Top en 3 columnas -->
+                        <GridView
+                            android:id="@+id/shoes_clothes_cards_grid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="auto_fit"
+                            android:columnWidth="96dp"
+                            android:padding="15dp"></GridView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CardView para la categoría "Top" - Parte superior del cuerpo -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="60dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp">
+
+                    <!-- LinearLayout interno: Organiza el header y la grilla de la categoría Top -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- ConstraintLayout: Header de la categoría con título y contador -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Texto del título de la categoría "Top" -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Accesorios"
+                                android:textColor="@color/gray_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <!-- Contador circular que muestra la cantidad de prendas tipo "Top" -->
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/accessories_clothes_counter_label"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:text="8"
+                                android:textStyle="bold"
+                                android:textSize="18dp"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:backgroundTint="@color/gray_dark"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- GridLayout: Grilla que muestra las prendas de la categoría Top en 3 columnas -->
+                        <GridView
+                            android:id="@+id/accessories_clothes_cards_grid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="auto_fit"
+                            android:columnWidth="96dp"
+                            android:padding="15dp"></GridView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
